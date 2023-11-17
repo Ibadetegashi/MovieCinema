@@ -1,3 +1,6 @@
 <h1>{{title | uppercase}}</h1>
 <p>{{date | date: "y-M-d"}}</p>
-<p>profit: {{profit | profit:10}}</p>
+<p [class.profit]="myClass">profit: {{profit | profit:10}}</p>
+
+<input #color placeholder="Enter a color"> <button type="button" (click)="setColor(color.value)">Submit Color</button><br>
+<p  [style.color]="color.value">Ibadete Gashi</p>
