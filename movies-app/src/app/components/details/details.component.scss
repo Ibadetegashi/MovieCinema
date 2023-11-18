@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    display: none;
+}
+@media (max-width:1200px){
+    .custom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .custom-1{
+        display: flex;
+        justify-content: center;
+        max-width: 560px;
+        max-height: 315;
+   
+    }
+    h1{
+        text-align: center;
+    }
+}
