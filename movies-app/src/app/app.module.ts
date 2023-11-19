@@ -10,6 +10,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
     DetailsComponent,
     DetailsMoviesComponent,
     DetailsReviewsComponent,
-    DetailsActorsComponent
+    DetailsActorsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule
