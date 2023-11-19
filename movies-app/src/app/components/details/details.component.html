@@ -1,15 +1,15 @@
-<h1>Movie Title</h1>
+<h1 >Movie Title</h1>
 <div class="row custom">
-    <div class="col-md-6  custom-1">
+    <div class="col-lg-6 col-md-12 col-sm-12 text-center custom-1">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5W0l_xfqzvU?si=5Xp9VvvfijeKYUpP"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
     </div>
-    <div class="col-md-6 ">
+    <div class="col-lg-6 col-md-12 col-sm-12">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur adipisci sit vitae nihil accusamus, quos magnam animi iusto? Est recusandae totam voluptatem saepe ratione tenetur, iusto voluptas impedit tempora nisi!</p>
-        <div class="row  gap-2 d-flex justify-content-center flex-wrap">
-        <div class="card col-md-4 p-0" style="width: 12rem;">
+        <div class="row justify-content-center gap-2">
+        <div class="card col-md-4 p-0" style="width: 12rem;" >
             <div class="card-header">
                 Featured
             </div>
@@ -49,8 +49,16 @@
     <!-- <app-details-actors class="d-flex justify-content-between flex-wrap" ></app-details-actors> without scroll, new line -->
     <app-details-actors class="d-flex gap-4 justify-content-between" style="overflow-x: auto;"></app-details-actors>
 </div>
+<hr>
+<br>
+<div class="row ">
+    <h1>Reviews</h1>
+    <div class="col-md-12">
+    <app-details-reviews></app-details-reviews>
+    </div>
+   
+</div>
 <app-details-movies></app-details-movies>
-<app-details-reviews></app-details-reviews>
 
 
 
