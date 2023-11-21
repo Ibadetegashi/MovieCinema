@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
 
+  movieId = ''
+constructor(private _activatedRoute: ActivatedRoute) {
+  this._activatedRoute.params.subscribe(data => {
+    this.movieId = data['id']
+    console.log('id='+ this.movieId);
+  })
+}
 }

@@ -1,6 +1,6 @@
-<h1>Movie title</h1>
+<h1>{{movieTitle}}</h1>
 
-<table class="table table-striped">
+<table class="table table-striped text-center" >
     <thead>
         <tr >
             <th scope="col">#</th>
@@ -18,7 +18,7 @@
             <td  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic excepturi fugit accusantium </td>
             <td>
                 <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a> &nbsp;
-                <a class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+                <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
             </td>
         </tr>
         <tr>
@@ -29,7 +29,7 @@
                 fugit accusantium </td>
             <td>
                 <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>&nbsp;
-                <a class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+                <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
             </td>
         </tr>
             <tr>
@@ -40,7 +40,7 @@
                     fugit accusantium </td>
                 <td >
                     <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>&nbsp;
-                    <a class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+                    <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
                 </td>
             </tr>
     </tbody>
@@ -63,10 +63,10 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+             
+            </div> -->
         </div>
     </div>
 </div>

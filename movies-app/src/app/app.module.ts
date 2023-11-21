@@ -11,7 +11,9 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { SearchComponent } from './components/search/search.component';
-
+import { Router } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+   FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
