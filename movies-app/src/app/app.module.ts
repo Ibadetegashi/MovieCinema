@@ -14,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     DetailsMoviesComponent,
     DetailsReviewsComponent,
     DetailsActorsComponent,
-    SearchComponent
+    SearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

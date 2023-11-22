@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
       path: 'search/:movieTitle',
       component: SearchComponent
+  },
+  {
+    path: '**',
+    component:NotFoundComponent
     }
  
 
