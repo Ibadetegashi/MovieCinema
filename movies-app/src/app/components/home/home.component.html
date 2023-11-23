@@ -1,15 +1,15 @@
 <div class="container" style="margin-top: 80px;">
-<div class="row  mt-6 ">
-    <div class="col-md-8  ">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+    <div class="row  mt-6 ">
+        <div class="col-md-8  ">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
-            </div>
+                </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://media.vanityfair.com/photos/5e791cd29c91c70009797058/master/pass/nature-movies-portrait-of-a-lady-on-fire.jpg"
@@ -49,137 +49,93 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let movie of movie">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
+                    <img [src]="movie.imageUrl"
                         class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural</p>
+                        <h5 class="card-title">{{movie.title}}</h5>
+                        <p class="card-text">{{movie.description}}</p>
                         <a class="btn btn-outline-primary mt-6 trailer">
                             <i class="bi bi-film"></i>Trailer
                         </a>
                     </div>
                 </div>
             </div>
-
-
-        </div>
-
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-                        class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural</p>
-                        <a class="btn btn-outline-primary mt-6 trailer">
-                            <i class="bi bi-film"></i>Trailer
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-                        class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural</p>
-                        <a class="btn btn-outline-primary mt-6 trailer">
-                            <i class="bi bi-film"></i>Trailer
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
 
-
-
-
-    <br>
-    <div class="row ">
-        <h1>Fan favorites</h1>
-        <hr>
-        <div class="row gy-5">
-            <div *ngFor="let m of fanFavorites" class="card  col-md-3  ">
-                <img [src]="m.imageUrl" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{m.title}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        cards content.</p>
-
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <span><i class="bi bi-calendar3"></i> {{m.year}}</span>
-                    <span><i class="bi bi-star-fill"></i> {{m.rate}}/10</span>
-                    <span><i class="bi bi-trophy"></i> {{m.trophy}}</span>
-                </div>
-            </div>
-            <!-- <div class="card  col-md-3">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
-            <div class="card-body">
-                <h5 class="card-title">Movie Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    cards
-                    content.</p>
-
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <span><i class="bi bi-calendar3"></i> 2023</span>
-                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
-                <span><i class="bi bi-trophy"></i> 1</span>
-            </div>
-        </div> -->
-            <!-- <div class="card  col-md-3">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
-            <div class="card-body">
-                <h5 class="card-title">Movie Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    cards
-                    content.</p>
-
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <span><i class="bi bi-calendar3"></i> 2023</span>
-                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
-                <span><i class="bi bi-trophy"></i> 1</span>
-            </div>
-        </div> -->
-            <!-- <div class="card  col-md-3">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
-            <div class="card-body">
-                <h5 class="card-title">Movie Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    cards
-                    content.</p>
-
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <span><i class="bi bi-calendar3"></i> 2023</span>
-                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
-                <span><i class="bi bi-trophy"></i> 1</span>
-            </div>
-        </div> -->
-        </div>
-    </div>
+  
 
 </div>
+<br>
+<div class="row ">
+    <h1>Fan favorites</h1>
+    <hr>
+    <div class="row gy-5">
+        <div *ngFor="let m of fanFavorites" class="card  col-md-3  ">
+            <img [src]="m.imageUrl" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{m.title}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    cards content.</p>
 
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <span><i class="bi bi-calendar3"></i> {{m.year}}</span>
+                <span><i class="bi bi-star-fill"></i> {{m.rate}}/10</span>
+                <span><i class="bi bi-trophy"></i> {{m.trophy}}</span>
+            </div>
+        </div>
+        <!-- <div class="card  col-md-3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Movie Title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    cards
+                    content.</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <span><i class="bi bi-calendar3"></i> 2023</span>
+                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
+                <span><i class="bi bi-trophy"></i> 1</span>
+            </div>
+        </div> -->
+        <!-- <div class="card  col-md-3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Movie Title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    cards
+                    content.</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <span><i class="bi bi-calendar3"></i> 2023</span>
+                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
+                <span><i class="bi bi-trophy"></i> 1</span>
+            </div>
+        </div> -->
+        <!-- <div class="card  col-md-3">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Movie Title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    cards
+                    content.</p>
+
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <span><i class="bi bi-calendar3"></i> 2023</span>
+                <span><i class="bi bi-star-fill"></i> 9.5/10</span>
+                <span><i class="bi bi-trophy"></i> 1</span>
+            </div>
+        </div> -->
+    </div>
+</div>
 
 </div>
