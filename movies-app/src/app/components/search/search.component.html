@@ -1,72 +1,83 @@
-<h1>{{movieTitle}}</h1>
-
-<table class="table table-striped text-center custom-1 container" >
-    <thead>
-        <tr >
-            <th scope="col">#</th>
-            <th scope="col">Image</th>
-            <th scope="col">Title</th>
-            <th scope="col" style="width: 500px;">Description</th>
-            <th scope="col" >Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg" width="100px" alt=""></td>
-            <td>Movie title</td>
-            <td  >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic excepturi fugit accusantium </td>
-            <td>
-                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a> &nbsp;
-                <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg" width="100px" alt=""></td>
-            <td>Movie title</td>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic excepturi
-                fugit accusantium </td>
-            <td>
-                <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>&nbsp;
-                <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
-            </td>
-        </tr>
+<div class="container" style="margin-top: 80px;">
+    <h1>{{movieTitle}}</h1>
+    <table class="table table-striped text-center custom-1 container">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col" style="width: 500px;">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg" width="100px" alt=""></td>
+                <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"
+                        width="100px" alt=""></td>
                 <td>Movie title</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic excepturi
-                    fugit accusantium </td>
-                <td >
-                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>&nbsp;
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic
+                    excepturi fugit accusantium </td>
+                <td>
+                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="bi bi-film"></i>Trailer</a> &nbsp;
                     <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
                 </td>
             </tr>
-    </tbody>
-</table>
+            <tr>
+                <th scope="row">1</th>
+                <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"
+                        width="100px" alt=""></td>
+                <td>Movie title</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic
+                    excepturi
+                    fugit accusantium </td>
+                <td>
+                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="bi bi-film"></i>Trailer</a>&nbsp;
+                    <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td><img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"
+                        width="100px" alt=""></td>
+                <td>Movie title</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, hic iure. Error temporibus hic
+                    excepturi
+                    fugit accusantium </td>
+                <td>
+                    <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="bi bi-film"></i>Trailer</a>&nbsp;
+                    <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                
-              
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center ">
+                    <iframe style="width: 100em ;height: 20em;"
+                        src="https://www.youtube.com/embed/5W0l_xfqzvU?si=5Xp9VvvfijeKYUpP" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 
+                </div> -->
             </div>
-            <div class="modal-body d-flex justify-content-center ">
-                <iframe  style="width: 100em ;height: 20em;"  src="https://www.youtube.com/embed/5W0l_xfqzvU?si=5Xp9VvvfijeKYUpP"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-             
-            </div> -->
         </div>
     </div>
 </div>
