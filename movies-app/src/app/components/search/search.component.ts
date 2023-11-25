@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -18,14 +18,18 @@ export class SearchComponent implements OnInit{
       this.movieTitle = data['movieTitle']
      })
   }
+  
   ngOnInit(): void {
     this.getSearchResults()
   }
 
   getTrailer(url: string) {
-   this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  
+  onModalHidden(): void {
+    this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl('');
+  }
+    
 
   getSearchResults() {
     this.movieService.getSearchResults().subscribe(data => {
