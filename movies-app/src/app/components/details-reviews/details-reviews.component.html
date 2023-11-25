@@ -1,48 +1,16 @@
 <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
+    <div *ngFor="let r of reviwes; let i = index"  class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-               <i class="bi bi-star"></i> <b> 7/10 </b> Review #1
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i"
+                aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
+               <i class="bi bi-star"></i> <b> {{r.reviwe}}/10  </b>  Review #{{i+1}}
             </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div [id]="'collapseOne'+i" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestiae ullam velit corporis ex aliquid possimus reiciendis explicabo praesentium culpa aut odit quia sapiente delectus ipsa dolor commodi sunt ipsum.</p>
-                <p class="blockquote-footer">Author Name</p>
-                <p><i>100 out 120 find this useful</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <i class="bi bi-star"></i> <b> 7/10 </b> Review #2
-            </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestiae ullam velit corporis ex aliquid
-                    possimus reiciendis explicabo praesentium culpa aut odit quia sapiente delectus ipsa dolor commodi sunt ipsum.</p>
-                <p class="blockquote-footer">Author Name</p>
-                <p><i>100 out 120 find this useful</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <i class="bi bi-star"></i> <b> 7/10 </b> Review #3
-            </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestiae ullam velit corporis ex aliquid
-                    possimus reiciendis explicabo praesentium culpa aut odit quia sapiente delectus ipsa dolor commodi sunt ipsum.</p>
-                <p class="blockquote-footer">Author Name</p>
-                <p><i>100 out 120 find this useful</i></p>
+                <p>{{r.body}}</p>
+                <p class="blockquote-footer">{{r.authorName}}</p>
+                <p><i>{{r.useful}} out {{r.total}} find this useful</i></p>
             </div>
         </div>
     </div>
