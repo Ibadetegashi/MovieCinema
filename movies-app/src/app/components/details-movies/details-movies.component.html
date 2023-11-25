@@ -1,69 +1,14 @@
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure><figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure><figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
+
+<div class="container">
+<div class="row  justify-content-md-start ">
+<figure *ngFor="let m of similarMovies" class="figure text-center col-md-2 mb-4">
+
+    <img [src]="m.src" class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
+    <figcaption class="figure-caption">{{m.title}}</figcaption>
+    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>{{m.rate}}/10</b></figcaption>
+
+
 </figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure><figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
-<figure class="figure text-center">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">Movie Title</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>7.5/10</b></figcaption>
-</figure>
+</div>
+
+</div>
