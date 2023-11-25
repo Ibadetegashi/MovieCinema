@@ -18,7 +18,7 @@
                 <td>{{search.title}}</td>
                 <td>{{search.description}}</td>
                 <td>
-                    <a (click)="getTrailer(search.trailer)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                    <a (click)=" getTrailer(search.trailer)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                             class="bi bi-film"></i>Trailer</a> &nbsp;
                     <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
                 </td>
@@ -40,7 +40,8 @@
                 </div>
                 <div class="modal-body d-flex justify-content-center ">
                     <iframe style="width: 100em ;height: 20em;"
-                        [attr.src]="trailer" title="YouTube video player"
+                    
+                        [attr.src]=" trailer" title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>

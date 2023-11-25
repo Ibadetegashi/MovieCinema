@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search',
@@ -10,9 +11,9 @@ import { MovieService } from 'src/app/services/movie.service';
 export class SearchComponent implements OnInit{
   movieTitle = ''
   searchResults: any[] = []
-  trailer = ''
+  trailer:SafeResourceUrl | undefined
   
-  constructor(private activated: ActivatedRoute,private movieService:MovieService) {
+  constructor(private activated: ActivatedRoute,private movieService:MovieService,private sanitizer: DomSanitizer) {
     this.activated.params.subscribe((data) => {
       this.movieTitle = data['movieTitle']
      })
@@ -21,6 +22,11 @@ export class SearchComponent implements OnInit{
     this.getSearchResults()
   }
 
+  getTrailer(url: string) {
+   this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+  
+
   getSearchResults() {
     this.movieService.getSearchResults().subscribe(data => {
       this.searchResults = data;
@@ -28,12 +34,6 @@ export class SearchComponent implements OnInit{
     }, error => {
       console.log(error);
     })
-  }
-  
-  getTrailer(url: string) {
-    this.trailer = url;
-
-    
   }
 
 }
