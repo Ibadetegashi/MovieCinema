@@ -1,31 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-details-actors',
   templateUrl: './details-actors.component.html',
   styleUrls: ['./details-actors.component.scss']
 })
-export class DetailsActorsComponent {
-  actors: any[] = [
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"},
-    {name:'Name',role:'Role',src:"https://s3.amazonaws.com/media.thecrimson.com/photos/2023/10/02/230842_1365400.jpeg"}
+export class DetailsActorsComponent implements OnInit{
+  actors: any[] = []
+
+  constructor(private movieService: MovieService) { }
+
+
+  ngOnInit(): void {
+    this.getActors();
+  }
+  
+
+  getActors() {
+    this.movieService.getActors().subscribe(data => {
+      this.actors = data;
+      console.log(this.actors);
+    });
+  }
+
  
-  ]
+
+
 }
