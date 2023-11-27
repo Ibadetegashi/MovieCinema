@@ -20,7 +20,7 @@
                 <td>
                     <a (click)=" getTrailer(search.trailer)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                             class="bi bi-film"></i>Trailer</a> &nbsp;
-                    <a class="btn btn-primary" [routerLink]="['/details', 4 ]"><i class="bi bi-eye"></i>Details</a>
+                    <a class="btn btn-primary" [routerLink]="['/details', search.title ]"><i class="bi bi-eye"></i>Details</a>
                 </td>
             </tr>
            
@@ -39,7 +39,7 @@
                     <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex justify-content-center ">
-                    <iframe id="frame" style="width: 100em ;height: 20em;"
+                    <iframe *ngIf="trailer" id="frame" style="width: 100em ;height: 20em;"
 
                         [src]=" trailer" title="YouTube video player"
                         frameborder="0"
