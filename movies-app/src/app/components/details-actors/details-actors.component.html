@@ -1,7 +1,7 @@
-<figure *ngFor="let actor of actors" class="figure text-center">
-    <img [src]="actor.src"
+<figure *ngIf="actor.profile_path"  class="figure text-center">
+    <img  [src]="actor.profile_path"
         class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
     <figcaption class="figure-caption">{{actor.name}}</figcaption>
-    <figcaption class="figure-caption">({{actor.role}})</figcaption>
+    <figcaption class="figure-caption">({{actor.character}})</figcaption>
 </figure>
 

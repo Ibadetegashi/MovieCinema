@@ -1,26 +1,32 @@
 <div *ngIf="selectedMovie" class="container" style="margin-top: 80px;">
-    <h1 *ngIf="selectedMovie"> {{selectedMovie.title}}</h1>
-    <div class="row custom">
-        <div
-            class="col-lg-6 col-md-12 col-sm-12 text-center custom-1 d-flex justify-content-lg-start justify-content-center ">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5W0l_xfqzvU?si=5Xp9VvvfijeKYUpP"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+<h1>{{ selectedMovie.title }}</h1>
+<div class="row custom">
+    <div
+        class="col-lg-6 col-md-12 col-sm-12 text-center custom-1 d-flex justify-content-lg-start justify-content-center">
+            <iframe width="560" height="315" [src]="safeUrl(safeTrailer)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12">
-            <p>
-                {{selectedMovie.overview}}
-            </p>
-            <span></span>
-        </div>
 
     </div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <p>{{ selectedMovie.overview }}</p>
+        <p><strong>Genres:</strong> {{ getGenres() }}</p>
+        <!-- <p><strong>Director:</strong> {{ getDirector() }}</p>
+        <p><strong>Producer:</strong> {{ getProducer() }}</p> -->
+        <p><strong>Release Date:</strong> {{ selectedMovie.release_date }}</p>
+        <!-- Add more information as needed -->
+    </div>
+</div>
+
     <hr>
     <div class="row ">
         <h1>Actors</h1>
         <!-- <app-details-actors class="d-flex justify-content-between flex-wrap" ></app-details-actors> without scroll, new line -->
-        <app-details-actors class="d-flex gap-4 justify-content-between" style="overflow-x: auto;"></app-details-actors>
+        <div class="d-flex gap-4 justify-content-between" style="overflow-x: auto;">
+            <app-details-actors *ngFor="let actor of actorsOfSelectedMovie" [actor]="actor"
+            ></app-details-actors></div>
+    
+       
     </div>
     <hr>
     <br>

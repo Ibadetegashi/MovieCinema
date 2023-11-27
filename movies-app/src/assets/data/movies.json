@@ -1,0 +1,38 @@
+[
+    {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7d/Landscape_with_invisible_hand_poster.png",
+        "title": "The Invisible Hand",
+        "description": "The Invisible Hand is a 1997 non-fiction",
+        "year": 1999,
+        "trophy": 1,
+        "rate": 9,
+        "actors" : [
+            {
+                "name": "Robert C. Merton",
+                "role": "Author"
+            },
+            {
+                "name": "Roger B. Williamson",
+                "role": "Author"
+            },
+            {
+                "name": "Warren E. Samuels",
+                "role": "Author"
+            }
+        ],
+        "genre": ["Economics","Drama"],
+        "director": [
+            {
+                "name": "Robert C. Merton",
+                "role": "Directed by"
+            }
+        ],
+        "producer": ["Producer 1"],
+        "runtime": "2 hours and 30 minutes",
+        "reviews": [{
+            "author": "John Doe",
+            "rating": 5,
+            "review": "This movie was amazing!"
+        }]
+    }
+]
