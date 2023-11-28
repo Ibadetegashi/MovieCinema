@@ -25,9 +25,9 @@ export class MovieService {
     return this.http.get<any[]>('assets/data/actors.json');
   }
 
-  getReviews() {
-    return this.http.get<any[]>('assets/data/review.json');
-  }
+  // getReviews() {
+  //   return this.http.get<any[]>('assets/data/review.json');
+  // }
 
   getSimilarMovies() {
     return this.http.get<any[]>('assets/data/similarMovies.json')
@@ -54,5 +54,9 @@ export class MovieService {
    }
   getTrailer(movieId:number) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=82e309254331f8d8f952fabdb0d32305&language=en-US`)
+  }
+
+  getReviews(movie_id:number) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=82e309254331f8d8f952fabdb0d32305`)
   }
 }

@@ -20,13 +20,20 @@ export class DetailsComponent implements OnInit{
   trailer: any
   safeTrailer: any 
 
+  reviews:any
+  
 constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieService,private sanitizer: DomSanitizer) {
   this._activatedRoute.params.subscribe(data => {
     this.activeRoute = data['id']
     console.log('title='+ this.activeRoute);
   })
-  }//e kam marr title parametrin :title prej rutit activ edhe e kom ru te activeRoute
-  
+  }//e kam marr id parametrin :id prej rutit activ edhe e kom ru te activeRoute
+    ngOnInit(): void {
+    this.getMovie();
+    this.getActors()
+      this.getTrailerKey();
+      this.getReview();
+  }
   getMovie() {
       this.movieService.getMovieById(this.activeRoute).subscribe(movie => {
         this.selectedMovie = movie
@@ -59,14 +66,18 @@ constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieS
   safeUrl(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  ngOnInit(): void {
-    this.getMovie();
-    this.getActors()
-    this.getTrailerKey()
-  }
+
   getGenres(): string {
   return this.selectedMovie.genres.map((genre:any) => genre.name).join(', ');
-}
+  }
+  
+  getReview() {
+    this.movieService.getReviews(this.activeRoute).subscribe(res => {
+      this.reviews = res
+      this.reviews = this.reviews.results
+      console.log(this.reviews);
+    })
+  }
   
   stars = ['Star 1']
   directories = ['Director 1', 'Director 2','Directory']

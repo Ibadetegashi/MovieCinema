@@ -1,16 +1,41 @@
-<div class="accordion" id="accordionExample">
-    <div *ngFor="let r of review; let i = index"  class="accordion-item">
+<!-- <div class="accordion" id="accordionExample">
+    <div  class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i"
-                aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
-               <i class="bi bi-star"></i> <b> {{r.reviwe}}/10  </b>  Review #{{i+1}}
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+review.id"
+                aria-expanded="true" [attr.aria-controls]="'collapseOne'+review.id">
+               <i class="bi bi-star"></i> <b> {{review.author_details
+.rating}}/10  </b>  Review #{{review.id}}
             </button>
         </h2>
-        <div [id]="'collapseOne'+i" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div [id]="'collapseOne'+review.id" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <p>{{r.body}}</p>
-                <p class="blockquote-footer">{{r.authorName}}</p>
-                <p><i>{{r.useful}} out {{r.total}} find this useful</i></p>
+                <p>{{review.body}}</p>
+                <p class="blockquote-footer">{{review.author}}</p>
+                <p><i>{{review.useful}} out {{review.total}} find this useful</i></p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#collapseOne'+review.id" aria-expanded="true"
+                [attr.aria-controls]="'collapseOne'+review.id">
+                <i class="bi bi-star"></i> &nbsp; <b *ngIf="review.author_details.rating !== null; else notRated">
+                    {{ review.author_details.rating }}  / 10 &nbsp;
+
+                </b>
+              <ng-template #notRated><b>0/10 &nbsp;</b></ng-template>
+                Review #{{index+1}}
+            </button>
+        </h2>
+        <div [id]="'collapseOne'+review.id" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <p>{{review.content}}</p>
+                <p class="blockquote-footer">{{review.author}}</p>
+                <p>Created: <i>{{review.created_at | date:'MMM d, y HH:mm a'}}</i>  </p>
             </div>
         </div>
     </div>

@@ -33,7 +33,7 @@
     <div class="row ">
         <h1>Reviews</h1>
         <div class="col-md-12">
-            <app-details-reviews></app-details-reviews>
+            <app-details-reviews *ngFor="let review of reviews; let i=index" [review]="review" [index]="i"></app-details-reviews>
         </div>
 
     </div>
