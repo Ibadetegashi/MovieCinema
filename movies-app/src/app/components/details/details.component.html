@@ -22,9 +22,9 @@
     <div class="row ">
         <h1>Actors</h1>
         <!-- <app-details-actors class="d-flex justify-content-between flex-wrap" ></app-details-actors> without scroll, new line -->
-        <div class="d-flex gap-4 justify-content-between" style="overflow-x: auto;">
-            <app-details-actors *ngFor="let actor of actorsOfSelectedMovie" [actor]="actor"
-            ></app-details-actors></div>
+        <div  class="d-flex gap-4 justify-content-between" style="overflow-x: auto;">
+            <app-details-actors *ngFor="let actor of actorsOfSelectedMovie" [actor]="actor" ></app-details-actors>
+        </div>
     
        
     </div>
@@ -37,16 +37,16 @@
         </div>
 
     </div>
-    <hr>
-    <br>
-    <div class="row ">
+    
+    <!-- <div class="row ">
         <h1 class="mb-4">Similar Movies</h1>
         <br>
-        <div class="col-md-12">
-            <app-details-movies></app-details-movies>
-
+   
+        <div class="d-flex gap-4 justify-content-between" style="overflow-x: auto;">
+        <app-details-movies *ngFor="let similarMovie of similarMovies" [similarMovie]="similarMovie"></app-details-movies>
         </div>
+            
+        </div>
+    -->
+    </div> 
 
-    </div>
-
-</div>

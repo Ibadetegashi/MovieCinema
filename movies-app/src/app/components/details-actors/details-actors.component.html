@@ -1,6 +1,7 @@
-<figure *ngIf="actor.profile_path"  class="figure text-center">
-    <img  [src]="actor.profile_path"
-        class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
+<figure  class="figure text-center ">
+    <div class="img d-flex align-items-center img-thumbnail figure-img img-fluid rounded " style="min-height: 12em;">
+        <img  [src]="actor.profile_path" alt='photo' style="max-width: 120px;">
+    </div>
     <figcaption class="figure-caption">{{actor.name}}</figcaption>
     <figcaption class="figure-caption">({{actor.character}})</figcaption>
 </figure>

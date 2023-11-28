@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieService {
 
-    private apiKey = '82e309254331f8d8f952fabdb0d32305';
+    private apiKey = '3be70d043ea9a89fecd2a6faff403213';
   private apiUrl = 'https://api.themoviedb.org/3/movie';
 
   constructor(private http: HttpClient) { }
@@ -38,14 +38,14 @@ export class MovieService {
   }
 
   getPopularMovies() {
-    return this.http.get('https://api.themoviedb.org/3/movie/popular?api_key=82e309254331f8d8f952fabdb0d32305&language=en-US')
+    return this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&language=en-US`)
   }
   getAllMovies() {
-    return this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=82e309254331f8d8f952fabdb0d32305&language=en-US&sort_by=popularity.desc")
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc`)
   }
   
  getMovieDetails(movieId: number) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=82e309254331f8d8f952fabdb0d32305&language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${this.apiKey}&language=en-US`;
   return this.http.get(url);
   }
    getMovieById(id: number) {
@@ -53,10 +53,14 @@ export class MovieService {
     return this.http.get(url);
    }
   getTrailer(movieId:number) {
-    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=82e309254331f8d8f952fabdb0d32305&language=en-US`)
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${this.apiKey}&language=en-US`)
   }
 
   getReviews(movie_id:number) {
-    return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=82e309254331f8d8f952fabdb0d32305`)
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=${this.apiKey}`)
+  }
+
+  getSimilar(movie_id: number) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${this.apiKey}`)
   }
 }

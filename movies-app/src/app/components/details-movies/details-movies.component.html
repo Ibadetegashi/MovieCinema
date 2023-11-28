@@ -1,14 +1,25 @@
 
 <div class="container">
 <div class="row  justify-content-md-start ">
-<figure *ngFor="let m of similarMovies" class="figure text-center col-md-2 mb-4">
+<figure  class="figure text-center col-md-2 mb-4">
 
-    <img [src]="m.src" class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
-    <figcaption class="figure-caption">{{m.title}}</figcaption>
-    <figcaption class="figure-caption "><i class="bi bi-star"></i><b>{{m.rate}}/10</b></figcaption>
+    <img [src]="similarMovie.poster_path" class="figure-img img-fluid rounded img-thumbnail" style="max-width: 120px;" alt="...">
+    <figcaption class="figure-caption">{{similarMovie.title}}</figcaption>
+    <figcaption class="figure-caption "><a [routerLink]="['/details', similarMovie.id]" class="btn btn-primary">Details</a></figcaption>
 
 
 </figure>
 </div>
 
-</div>
+</div> 
+  
+    <!-- <div  class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card">
+            <img [src]="similarMovie.poster_path" class="card-img-top" >
+            <div class="card-body">
+                <h5 class="card-title">Titulli</h5>
+                <p class="card-text">Release Date: </p>
+                <a [routerLink]="['/details', similarMovie.id]" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div> -->

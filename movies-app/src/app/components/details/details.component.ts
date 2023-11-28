@@ -20,7 +20,8 @@ export class DetailsComponent implements OnInit{
   trailer: any
   safeTrailer: any 
 
-  reviews:any
+  reviews: any
+  similarMovies:any
   
 constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieService,private sanitizer: DomSanitizer) {
   this._activatedRoute.params.subscribe(data => {
@@ -33,6 +34,7 @@ constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieS
     this.getActors()
       this.getTrailerKey();
       this.getReview();
+      this.getSimilar();
   }
   getMovie() {
       this.movieService.getMovieById(this.activeRoute).subscribe(movie => {
@@ -47,8 +49,15 @@ constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieS
      this.movieService.getMovieDetails(this.activeRoute).subscribe(movie => {
           this.movieCredist=movie
           this.actorsOfSelectedMovie = this.movieCredist.cast
-          for (let cast of this.movieCredist.cast) {
-            cast.profile_path = 'https://image.tmdb.org/t/p/w440_and_h660_face'+cast.profile_path
+       for (let cast of this.movieCredist.cast) {
+         if (!cast.profile_path) {
+         cast.profile_path="https://media.istockphoto.com/id/1473780957/vector/default-avatar-profile-user-profile-icon-business-people-profile-picture-portrait-user.jpg?s=612x612&w=0&k=20&c=r4mWzcW0g6MDjfl6I-1DoaAVYCuhJWtaEgYMDcBob-U="
+        //cast.profile_path=null
+         } else {
+             cast.profile_path = 'https://image.tmdb.org/t/p/w440_and_h660_face' + cast.profile_path
+            console.log(cast.profile_path);
+            }
+          
        }
         }, error => {
         console.log(error);
@@ -78,10 +87,19 @@ constructor(private _activatedRoute: ActivatedRoute,private movieService: MovieS
       console.log(this.reviews);
     })
   }
+
+  getSimilar() {
+    this.movieService.getSimilar(this.activeRoute).subscribe(res => { 
+      console.log(res);
+      this.similarMovies = res;
+      this.similarMovies = this.similarMovies.results
+       for (let similar of this.similarMovies) {
+        similar.poster_path = `https://image.tmdb.org/t/p/w440_and_h660_face${similar.poster_path}`;
+      }
+    })
+  }
   
-  stars = ['Star 1']
-  directories = ['Director 1', 'Director 2','Directory']
-  genres = ['Comedy', 'Romance', 'Thriller', 'Drama']
+
   
  
 }
