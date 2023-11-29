@@ -18,7 +18,7 @@ export class MovieService {
   }
 
   getFavoritesMovies() {
-    return this.http.get<any[]>('assets/data/fanFavorites.json');
+    return this.http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.apiKey}`);
   }
 
   getActors() {
@@ -62,5 +62,9 @@ export class MovieService {
 
   getSimilar(movie_id: number) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${this.apiKey}`)
+  }
+
+  search(searchQuery:string) {
+    return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${searchQuery}`)
   }
 }

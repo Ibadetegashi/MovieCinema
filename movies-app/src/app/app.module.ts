@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { MovieListComponent } from './components/movie-list/movie-list.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http'
     DetailsReviewsComponent,
     DetailsActorsComponent,
     SearchComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import {HttpClientModule} from '@angular/common/http'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SearchComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

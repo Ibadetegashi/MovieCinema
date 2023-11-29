@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-    movieTitle=''
- 
+  movieTitle = ''
+ constructor(private search: SearchComponent){}
 
- 
+  onSearchInputChange() {
+   this.search.search(this.movieTitle)
+ }
 }
