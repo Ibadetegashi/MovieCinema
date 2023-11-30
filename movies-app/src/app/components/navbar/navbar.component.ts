@@ -9,9 +9,4 @@ import { SearchComponent } from '../search/search.component';
 })
 export class NavbarComponent {
   movieTitle = ''
- constructor(private search: SearchComponent){}
-
-  onSearchInputChange() {
-   this.search.search(this.movieTitle)
- }
 }

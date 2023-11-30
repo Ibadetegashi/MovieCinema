@@ -8,7 +8,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent {
   movieTitle = ''
   searchResults: any
   trailer:SafeResourceUrl | undefined
@@ -16,15 +16,13 @@ export class SearchComponent implements OnInit{
   constructor(private activated: ActivatedRoute,private movieService:MovieService,private sanitizer: DomSanitizer) {
     this.activated.params.subscribe((data) => {
       this.movieTitle = data['movieTitle']
+      this.search()
      })
   }
 
-  
-  ngOnInit(): void {
-    this.search(this.movieTitle)
-  }
-  search(movieTitle:string) {
-    this.movieService.search(movieTitle).subscribe(res => {
+
+  search() {
+    this.movieService.search(this.movieTitle).subscribe(res => {
       console.log(res);
       this.searchResults = res
       this.searchResults = this.searchResults.results
